@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.wdiannao.demo.friutshop.daomapper.YoghurtMapper">
+    <resultMap type="Yoghurt" id="yoghurtResultMap" >
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+        <result property="weight" column="weight"/>
+    </resultMap>
+    <!-- 目的：为DAO接口方法提供sql语句配置 -->
+    <!-- 查询用户和密码进行登录 -->
+    <select id="queryAllYoghurt" resultMap="yoghurtResultMap">
+		select *
+		from yoghurt
+	</select>
+    <insert id="insertYoghurt" parameterType="Yoghurt">
+        insert
+        into yoghurt(name, price, weight)
+        VALUE (#{name}, #{price}, #{weight})
+    </insert>
+
+    <delete id="deleteYoghurtById" parameterType="int" >
+        delete
+        from yoghurt
+        where id = #{id}
+    </delete>
+</mapper>

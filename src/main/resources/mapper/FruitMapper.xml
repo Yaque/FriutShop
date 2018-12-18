@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.wdiannao.demo.friutshop.daomapper.FruitMapper">
+	<resultMap type="Fruit" id="fruitResultMap" >
+		<id property="id" column="id"/>
+		<result property="classification" column="classification"/>
+		<result property="name" column="name"/>
+		<result property="price" column="price"/>
+		<result property="weight" column="weight"/>
+		<result property="shape" column="shape"/>
+	</resultMap>
+    <!-- 目的：为DAO接口方法提供sql语句配置 -->
+    <!-- 查询用户和密码进行登录 -->
+    <select id="queryAllFruit" resultMap="fruitResultMap">
+		select *
+		from fruit
+	</select>
+
+	<insert id="insertFruit" parameterType="Fruit">
+        insert
+        into fruit(classification, name, price, weight, shape)
+        VALUE (#{classification}, #{name}, #{price}, #{weight}, #{shape})
+    </insert>
+	
+	<delete id="deleteFruitById" parameterType="int" >
+		delete
+		from fruit
+		where id = #{id}
+	</delete>
+</mapper>

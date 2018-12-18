@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.wdiannao.demo.friutshop.daomapper.ShoppingTrolleyMapper">
+    <resultMap type="ShoppingTrolley" id="shoppingTrolleyResultMap" >
+        <id property="id" column="id"/>
+        <result property="phoneNumber" column="phoneNumber"/>
+        <result property="fruits" column="fruits"/>
+        <result property="packingBoxs" column="packingBoxs"/>
+        <result property="packingBags" column="packingBags"/>
+        <result property="yoghurts" column="yoghurts"/>
+        <result property="sumPrice" column="sumPrice" />
+        <result property="message" column="message" />
+    </resultMap>
+    <!-- 目的：为DAO接口方法提供sql语句配置 -->
+    <!-- 查询用户和密码进行登录 -->
+    <select id="queryAllShoppingTrolley" resultMap="shoppingTrolleyResultMap">
+		select *
+		from shoppingtrolley
+	</select>
+
+    <insert id="insertShoppingTrolley" parameterType="ShoppingTrolley" >
+        INSERT INTO
+        shoppingtrolley(phoneNumber, fruits, packingBoxs, packingBags, yoghurts, sumPrice, message)
+        VALUE (#{phoneNumber}, #{fruits}, #{packingBoxs}, #{packingBags}, #{yoghurts}, #{sumPrice}, #{message})
+    </insert>
+
+    <delete id="deleteById" parameterType="int">
+        delete
+        from shoppingtrolley
+        where id = #{id}
+    </delete>
+
+    <select id="selectById" parameterType="int" resultType="ShoppingTrolley">
+        select *
+        from shoppingtrolley
+        where id = #{id}
+    </select>
+</mapper>

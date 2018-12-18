@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.wdiannao.demo.friutshop.daomapper.PackingBagMapper">
+	<resultMap type="PackingBag" id="packingBagResultMap" >
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="price" column="price"/>
+	</resultMap>
+    <!-- 目的：为DAO接口方法提供sql语句配置 -->
+    <!-- 查询用户和密码进行登录 -->
+    <select id="queryAllPackingBag" resultMap="packingBagResultMap">
+		select *
+		from packingbag
+	</select>
+
+	<insert id="insertPackingBag" parameterType="PackingBag">
+        insert
+        into packingbag(name, price)
+        VALUE (#{name}, #{price})
+    </insert>
+
+	<delete id="deletePackingBagById" parameterType="int" >
+		delete
+		from packingbag
+		where id = #{id}
+	</delete>
+</mapper>
