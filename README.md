@@ -5,6 +5,7 @@ Fruit Shop 水果捞商店
 本项目基于intellij idea的专业版<br>
 使用ssm框架技术<br>
 layui模块化前端<br>
+java,必须Java8<br>
 
 ## 一、运行试用
 * 首先，把项目clone到本地。
@@ -17,7 +18,8 @@ layui模块化前端<br>
 ![接着](https://github.com/Yaque/FriutShop/blob/master/show/use/3.png)
 
 ![接着](https://github.com/Yaque/FriutShop/blob/master/show/use/4.png)
-
+在这一步执行前，可能会由于.iml配置文件与本机个人电脑配置文件不符和导致问题，<br/>
+可以自己上project structure修改一下。
 ![接着](https://github.com/Yaque/FriutShop/blob/master/show/use/5.png)
 
 ![接着](https://github.com/Yaque/FriutShop/blob/master/show/use/6.png)
