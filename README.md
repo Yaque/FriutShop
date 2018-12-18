@@ -6,6 +6,10 @@ Fruit Shop 水果捞商店
 使用ssm框架技术<br>
 layui模块化前端<br>
 java,必须Java8<br>
+测试地址：<br>
+管理端 http://120.78.219.186:8080/FriutShop/admin/login<br>
+用户端 http://120.78.219.186:8080/FriutShop<br>
+包括部分数据的sql文件<br>
 
 ## 一、运行试用
 * 首先，把项目clone到本地。
