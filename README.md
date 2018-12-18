@@ -18,8 +18,10 @@ java,必须Java8<br>
 ![接着](https://github.com/Yaque/FriutShop/blob/master/show/use/3.png)
 
 ![接着](https://github.com/Yaque/FriutShop/blob/master/show/use/4.png)
+
 在这一步执行前，可能会由于.iml配置文件与本机个人电脑配置文件不符和导致问题，<br/>
 可以自己上project structure修改一下。
+
 ![接着](https://github.com/Yaque/FriutShop/blob/master/show/use/5.png)
 
 ![接着](https://github.com/Yaque/FriutShop/blob/master/show/use/6.png)
